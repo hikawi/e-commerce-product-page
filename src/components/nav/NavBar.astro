@@ -1,0 +1,29 @@
+---
+import CartButton from "./CartButton";
+import Logo from "../icons/Logo.astro";
+import NavButton from "./NavButton";
+import NavMenu from "./NavMenu";
+
+import avatar from "../../assets/image-avatar.png";
+import { Image } from "astro:assets";
+---
+
+<nav
+  class="flex items-center justify-between px-6 py-5 xl:mx-desktop-x-pad xl:h-28 xl:border-b-[1px] xl:border-n-very-light-gray xl:p-0"
+>
+  <div class="flex items-center gap-4 xl:h-full xl:gap-16">
+    <NavButton client:load />
+    <Logo />
+    <NavMenu client:load />
+  </div>
+
+  <div class="flex flex-row items-center gap-5 xl:gap-10">
+    <CartButton client:load />
+    <Image
+      src={avatar}
+      alt="Your Avatar"
+      draggable="false"
+      class="size-6 rounded-full object-contain hover:ring-2 hover:ring-p-orange xl:size-12"
+    />
+  </div>
+</nav>
