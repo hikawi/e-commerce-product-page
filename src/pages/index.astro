@@ -1,16 +1,42 @@
 ---
-
+import NavBar from "../components/nav/NavBar";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>E-Commerce Product Page</title>
+    <meta
+      name="description"
+      content="A generic product page for an e-commerce website, a challenge by Frontend Mentor."
+    />
+
+    <meta property="og:title" content="E-Commerce Product Page" />
+    <meta
+      property="og:description"
+      content="A generic product page for an e-commerce website, a challenge by Frontend Mentor."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap"
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap"
+      />
+    </noscript>
+  </head>
+
+  <body class="font-kumbh-sans">
+    <NavBar client:load />
+  </body>
 </html>
