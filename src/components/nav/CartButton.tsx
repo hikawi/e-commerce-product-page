@@ -26,13 +26,21 @@ export default function CartButton() {
   });
 
   return (
-    <div class="relative flex h-fit w-fit items-center justify-center">
-      <button onClick={() => $showCart.set(!showCart())}>
+    <div class="group relative flex h-fit w-fit items-center justify-center">
+      <button
+        onClick={() => $showCart.set(!showCart())}
+        aria-keyshortcuts="c"
+        aria-label="Cart"
+      >
         <IconCart />
       </button>
 
       <CartNumber />
       <CartDialog show={showCart()} />
+
+      <kbd class="absolute left-1/2 top-4 hidden -translate-x-1/2 group-focus:flex">
+        c
+      </kbd>
     </div>
   );
 }

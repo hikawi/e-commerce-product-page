@@ -1,7 +1,7 @@
-import IconPrevious from "../icons/IconPrevious";
-import IconNext from "../icons/IconNext";
 import { onCleanup, onMount } from "solid-js";
 import { isServer } from "solid-js/web";
+import IconNext from "../icons/IconNext";
+import IconPrevious from "../icons/IconPrevious";
 
 export default function ScrollImage(props: {
   left?: boolean;
@@ -43,7 +43,7 @@ export default function ScrollImage(props: {
 
   return (
     <button
-      class="absolute top-1/2 z-10 flex size-10 -translate-y-1/2 items-center justify-center rounded-full bg-white stroke-n-very-dark-blue hover:stroke-p-orange"
+      class="absolute top-1/2 z-10 flex size-10 -translate-y-1/2 items-center justify-center rounded-full bg-white stroke-n-very-dark-blue hover:stroke-p-orange xl:hidden"
       classList={{ "left-4": props.left, "right-4": props.right }}
       aria-label={props.left ? "Scroll left" : "Scroll right"}
       onClick={scroll}
