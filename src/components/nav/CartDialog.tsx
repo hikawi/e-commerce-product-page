@@ -73,7 +73,7 @@ export default function CartDialog(props: { show: boolean }) {
       <div
         class="fixed left-1/2 top-16 z-30 flex w-[22.5rem] max-w-full -translate-x-1/2 flex-col overflow-y-hidden rounded-xl bg-white shadow-xl transition-all duration-200 ease-linear motion-reduce:duration-0 xl:absolute xl:left-0 xl:top-10 xl:max-w-none xl:translate-y-0"
         classList={{
-          "max-h-[64rem]": props.show,
+          "max-h-[16rem]": props.show,
           "max-h-0 invisible": !props.show,
         }}
         role="dialog"
