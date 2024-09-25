@@ -7,8 +7,9 @@ import IconDelete from "../icons/IconDelete";
 function CartContent(props: { cart: number }) {
   return (
     <>
-      <div class="flex w-full items-center border-b-[1px] border-n-very-light-gray p-6">
+      <div class="flex w-full flex-row items-center justify-between border-b-[1px] border-n-very-light-gray p-6">
         <h1 class="font-bold">Cart</h1>
+        <kbd>c</kbd>
       </div>
 
       <div
@@ -63,16 +64,14 @@ export default function CartDialog(props: { show: boolean }) {
   const cart = useStore($cart);
   const [ignited, setIgnited] = createSignal(false);
 
-  onMount(() => {
-    setIgnited(true);
-  });
+  onMount(() => setIgnited(true));
 
   return (
     <>
       {/* Mobile version slides down out of the nav bar. */}
       {/* Desktop version of the cart, sliding down FROM the cart icon. */}
       <div
-        class="absolute left-1/2 top-16 flex w-[22.5rem] max-w-full -translate-x-1/2 flex-col overflow-y-hidden rounded-xl bg-white shadow-xl transition-all duration-200 ease-linear motion-reduce:duration-0 xl:left-0 xl:top-10 xl:translate-y-0"
+        class="fixed left-1/2 top-16 z-30 flex w-[22.5rem] max-w-full -translate-x-1/2 flex-col overflow-y-hidden rounded-xl bg-white shadow-xl transition-all duration-200 ease-linear motion-reduce:duration-0 xl:absolute xl:left-0 xl:top-10 xl:max-w-none xl:translate-y-0"
         classList={{
           "max-h-[64rem]": props.show,
           "max-h-0 invisible": !props.show,

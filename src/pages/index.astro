@@ -1,4 +1,6 @@
 ---
+import MainContent from "../components/main/MainContent.astro";
+import ProductImage from "../components/main/ProductImage.astro";
 import NavBar from "../components/nav/NavBar.astro";
 ---
 
@@ -38,5 +40,15 @@ import NavBar from "../components/nav/NavBar.astro";
 
   <body class="font-kumbh-sans">
     <NavBar />
+    <main>
+      <ProductImage />
+      <MainContent />
+    </main>
   </body>
 </html>
+
+<style is:global>
+  kbd {
+    @apply max-h-fit items-center justify-center rounded border-gray-700 bg-gray-500 p-0 px-2 text-base text-gray-100 shadow-[0px_2px_0px_2px] shadow-gray-600 duration-200 hover:translate-y-0.5 hover:shadow-none xl:flex;
+  }
+</style>

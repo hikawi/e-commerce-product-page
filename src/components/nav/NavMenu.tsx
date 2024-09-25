@@ -9,7 +9,7 @@ export default function NavMenu() {
     <>
       {/* Mobile Menu */}
       <div
-        class="fixed left-0 top-0 z-0 h-full w-full overflow-hidden bg-black bg-opacity-75 duration-200 xl:hidden"
+        class="xl:hiddean fixed left-0 top-0 z-40 h-full w-full overflow-hidden bg-black bg-opacity-75 duration-200"
         classList={{ invisible: !open(), flex: open() }}
         onClick={() => $menuOpen.set(false)} // Close menu when clicking on the overlay.
       >

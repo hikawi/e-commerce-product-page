@@ -10,7 +10,7 @@ export default function NavButton() {
     <button
       onClick={() => $menuOpen.set(!open())}
       aria-label={open() ? "Close Menu" : "Open Menu"}
-      class="z-10 block duration-200 ease-linear motion-reduce:duration-0 xl:hidden"
+      class="z-50 block duration-200 ease-linear motion-reduce:duration-0 xl:hidden"
       classList={{ "rotate-90": open() }}
     >
       {open() ? <IconClose /> : <IconMenu />}

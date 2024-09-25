@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+import product1 from "../../assets/image-product-1.jpg";
+import product2 from "../../assets/image-product-2.jpg";
+import product3 from "../../assets/image-product-3.jpg";
+import product4 from "../../assets/image-product-4.jpg";
+import ScrollImage from "./ScrollImage";
+
+const images = [product1, product2, product3, product4];
+---
+
+<div class="relative z-0 w-full snap-x snap-mandatory">
+  <div
+    id="product-scroll"
+    class="flex w-full snap-x snap-mandatory flex-row overflow-x-scroll"
+  >
+    {
+      images.map((image, index) => (
+        <Image
+          src={image}
+          alt={`Product ${index + 1}`}
+          class="h-full w-full shrink-0 snap-center snap-always object-cover"
+        />
+      ))
+    }
+  </div>
+
+  <ScrollImage left client:load />
+  <ScrollImage right client:load />
+</div>
